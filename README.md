@@ -70,9 +70,9 @@ node scripts/check-api.mjs http://localhost:4100 1.0.0 staging
 
 ## Результат роботи — заповнює студент
 
-- Команда локального запуску:
-- Параметри середовища:
-- Посилання на репозиторій:
-- Спосіб розгортання та URL або причина локального варіанта:
-- Результат перевірки версії 1.1.0 та її коміту:
-- Ресурси, які зупинено або видалено:
+- Команда локального запуску: `npm run dev` (завантажує `.env` через `--env-file=.env`, Node.js 24).
+- Параметри середовища: `PORT`, `NODE_ENV`, `APP_ENV`, `APP_MESSAGE`; необов'язково `DEPLOY_REVISION`. Локально: PORT=4100, NODE_ENV=production, APP_ENV=staging. На Render: NODE_ENV=production, APP_ENV=production, APP_MESSAGE; PORT надає платформа. Значення секретів не наведено.
+- Посилання на репозиторій: https://github.com/mdarichs/node-deployment-lab11
+- Спосіб розгортання та URL: Render Free Web Service (Node, Build Command `npm ci`, Start Command `npm start`, Health Check Path `/ready`, Auto-Deploy: After CI Checks Pass). URL: https://lab11-mdarichs-api.onrender.com. Free-сервіс може засинати після неактивності, перший запит до 2 хвилин.
+- Результат перевірки версії 1.1.0 та її коміту: `API checks passed`, version 1.1.0, revision 84285f1cdcf7a1d7fa4d50d8a2913c7803bb1782 збігається з `git rev-parse HEAD` для коміту «Publish API version 1.1.0».
+- Ресурси, які зупинено або видалено: сервіс Render Free залишено для перевірки викладачем.
